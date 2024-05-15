@@ -12,7 +12,7 @@ job_queue.sh
 !requirements.txt
 *.cleaned
 audiocaps_train.json
-dataset
+dataset/*
 !data/dataset/metadata/
 checkpoints
 *.tar
