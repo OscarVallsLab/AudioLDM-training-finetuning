@@ -1,0 +1,33 @@
+{
+	"name": "dcase_task7",
+	"image": "nvcr.io/nvidia/cuda:12.1.0-cudnn8-devel-ubuntu22.04",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"GrapeCity.gc-excelviewer",
+				"ms-toolsai.jupyter",
+				"sukumo28.wav-preview"
+			]
+		}
+	},
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace/code,type=bind,consistency=cached",
+	"workspaceFolder": "/workspace/code",
+	"runArgs": [
+		"--gpus", "device=0",
+		"--volume", "/home/oscar/dcase/NASFolder:/workspace/NASFolder",
+		"--name", "dcase_task7",
+		"--workdir", "/workspace/code",
+		"--ipc", "host"
+	],
+	"postCreateCommand": 
+		// "bash -c 'apt update && apt install -y git && pip install -r requirements.txt'"
+		// "apt install -y git",
+		"sh setup.sh"
+	// Optional: Forward specific ports if needed
+	// "forwardPorts": [8080, 5000],
+
+	// Stop container when the VS Code window is closed
+	// "shutdownAction": "stopContainer"
+}
