@@ -9,6 +9,7 @@ lightning_logs
 mlx_submit_*
 job_queue.sh
 *.txt
+!requirements.txt
 *.cleaned
 audiocaps_train.json
 dataset
