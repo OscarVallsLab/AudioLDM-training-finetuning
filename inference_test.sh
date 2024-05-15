@@ -1,0 +1,1 @@
+python3 audioldm_train/infer.py --config_yaml audioldm_train/config/2023_08_23_reproduce_audioldm/audioldm_crossattn_flant5.yaml --list_inference tests/captionlist/inference_test.lst --reload_from_ckpt ./data/checkpoints/audioldm-s-full

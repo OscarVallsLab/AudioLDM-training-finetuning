@@ -5,6 +5,9 @@ import argparse
 import yaml
 import torch
 
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from utilities.data.dataset import AudioDataset
 
 from torch.utils.data import DataLoader
