@@ -1,6 +1,5 @@
 export DEBIAN_FRONTEND=noninteractive export TZ=Europe/Madrid
 export PYTHONPATH=$PYTHONPATH:/workspace/code
-export WANDB_API_KEY=7e1d3b5f080a58414a49c76d515a685dd92bfc26
 apt update
 apt install -y python3 python3-pip python3-tk
 pip install --upgrade pip
