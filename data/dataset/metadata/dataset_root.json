@@ -1,5 +1,5 @@
 {
-    "audiocaps": "./data/dataset/audioset",
+    "audiocaps": "../nasfolder/data/audiocaps",
     "comments":{
     },
 

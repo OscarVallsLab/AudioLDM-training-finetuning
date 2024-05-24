@@ -16,7 +16,7 @@
 	"workspaceFolder": "/workspace/code",
 	"runArgs": [
 		"--gpus", "device=0",
-		"--volume", "/home/oscar/dcase/NASFolder:/workspace/NASFolder",
+		"--volume", "/home/oscar/dcase/nasfolder:/workspace/nasfolder",
 		"--name", "dcase_task7",
 		"--workdir", "/workspace/code",
 		"--ipc", "host"
