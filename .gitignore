@@ -20,3 +20,4 @@ condor*
 wandb
 .hypotesis/
 .devcontainer/
+.env

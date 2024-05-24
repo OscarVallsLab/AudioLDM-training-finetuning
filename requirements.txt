@@ -13,3 +13,5 @@ wget==3.2
 timm==0.4.12
 wandb==0.16.0
 taming-transformers-rom1504==0.0.6
+datasets==2.19.1
+python-dotenv=1.0.1

@@ -8,6 +8,14 @@ sys.path.append("src")
 import shutil
 import os
 
+from dotenv import load_dotenv
+
+# Load environment variables from the .env file
+load_dotenv('.env')
+
+# Access the environment variables
+os.environ['WANDB_API_KEY'] = os.getenv("WANDB_API_KEY")
+
 os.environ["TOKENIZERS_PARALLELISM"] = "true"
 
 import argparse
