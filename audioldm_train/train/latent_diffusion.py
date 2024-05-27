@@ -14,7 +14,8 @@ from dotenv import load_dotenv
 load_dotenv('.env')
 
 # Access the environment variables
-os.environ['WANDB_API_KEY'] = os.getenv("WANDB_API_KEY")
+if os.path.isfile('.env'):
+    os.environ['WANDB_API_KEY'] = os.getenv("WANDB_API_KEY")
 
 os.environ["TOKENIZERS_PARALLELISM"] = "true"
 
