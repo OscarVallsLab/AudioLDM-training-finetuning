@@ -878,6 +878,8 @@ class UNetModel(nn.Module):
         h = self.middle_block(h, emb, context_list, context_attn_mask_list)
         for module in self.output_blocks:
             concate_tensor = hs.pop()
+            if concate_tensor.shape[-1] != h.shape[-1] and h.shape[-1] != 1:
+                h = th.mean(h,dim=-1,keepdim=True)
             h = th.cat([h, concate_tensor], dim=1)
             h = module(h, emb, context_list, context_attn_mask_list)
         h = h.type(x.dtype)

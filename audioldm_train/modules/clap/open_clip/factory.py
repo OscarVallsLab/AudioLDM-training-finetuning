@@ -60,10 +60,10 @@ def load_state_dict(checkpoint_path: str, map_location="cpu", skip_params=True):
     if skip_params:
         if next(iter(state_dict.items()))[0].startswith("module"):
             state_dict = {k[7:]: v for k, v in state_dict.items()}
-    # for k in state_dict:
-    #     if k.startswith('transformer'):
-    #         v = state_dict.pop(k)
-    #         state_dict['text_branch.' + k[12:]] = v
+    for k in state_dict:
+        if k.startswith('transformer'):
+            v = state_dict.pop(k)
+            state_dict['text_branch.' + k[12:]] = v
     return state_dict
 
 
@@ -150,7 +150,7 @@ def create_model(
                     f"Loading pretrained {amodel_name}-{tmodel_name} weights ({pretrained})."
                 )
                 ckpt = load_state_dict(checkpoint_path, skip_params=True)
-                model.load_state_dict(ckpt)
+                model.load_state_dict(ckpt,strict=False)
                 param_names = [n for n, p in model.named_parameters()]
                 # for n in param_names:
                 #     print(n, "\t", "Loaded" if n in ckpt else "Unloaded")
@@ -227,8 +227,8 @@ def create_model(
                 f"Loading pretrained {amodel_name} weights ({pretrained_audio})."
             )
             param_names = [n for n, p in model.named_parameters()]
-            for n in param_names:
-                print(n, "\t", "Loaded" if n in audio_ckpt else "Unloaded")
+            # for n in param_names:
+            #     print(n, "\t", "Loaded" if n in audio_ckpt else "Unloaded")
 
         model.to(device=device)
         if precision == "fp16":

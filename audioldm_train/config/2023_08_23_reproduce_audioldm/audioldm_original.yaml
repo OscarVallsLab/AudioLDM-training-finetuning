@@ -7,9 +7,9 @@ variables:
   sampling_rate: &sampling_rate 16000 
   mel_bins: &mel_bins 64
   latent_embed_dim: &latent_embed_dim 8
-  latent_t_size: &latent_t_size 256 # TODO might need to change
-  latent_f_size: &latent_f_size 16
-  in_channels: &unet_in_channels 8
+  latent_t_size: &latent_t_size 512 # TODO might need to change
+  latent_f_size: &latent_f_size 4
+  in_channels: &unet_in_channels 1
   optimize_ddpm_parameter: &optimize_ddpm_parameter true
   optimize_gpt: &optimize_gpt true
   warmup_steps: &warmup_steps 2000
